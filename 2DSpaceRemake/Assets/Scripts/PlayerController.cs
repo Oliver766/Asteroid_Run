@@ -12,11 +12,14 @@ public class PlayerController : MonoBehaviour
     private float minX, maxX, minY, maxY;
 
     public int currentHealth;
+    public int maxHealth = 4;
+    public GameManager manager;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         SetUpBoundries();
+        currentHealth = maxHealth;
     }
 
    
@@ -92,5 +95,22 @@ public class PlayerController : MonoBehaviour
         Vector3 movementVector = new Vector3(horizontalMovement, verticalMovement, 0f);
 
         rb.velocity = movementVector * moveSpeed;
+    }
+
+    public void OnAsteroidImpact()
+    {
+        currentHealth--;
+        // change health bar
+        manager.ChangeHealthBar(maxHealth, currentHealth);
+        if(currentHealth == 0)
+        {
+            OnPlayerDeath();
+        }
+    }
+
+    private void OnPlayerDeath()
+    {
+        //play animation
+        Debug.Log("Player Died(duh duh duhhhh)");
     }
 }

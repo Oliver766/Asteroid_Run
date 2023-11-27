@@ -41,4 +41,12 @@ public class AsteroidController : MonoBehaviour
         //destroy game object with a delay
         Destroy(gameObject);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<PlayerController>().OnAsteroidImpact();
+            DestroyAsteroid();
+        }
+    }
 }
