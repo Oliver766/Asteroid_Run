@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private float minX, maxX, minY, maxY;
 
+    public int currentHealth;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
