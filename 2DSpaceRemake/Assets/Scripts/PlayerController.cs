@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public int maxHealth = 4;
     public GameManager manager;
 
+    public GameObject deathMenu;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -112,5 +113,6 @@ public class PlayerController : MonoBehaviour
     {
         //play animation
         Debug.Log("Player Died(duh duh duhhhh)");
+        deathMenu.SetActive(true);
     }
 }

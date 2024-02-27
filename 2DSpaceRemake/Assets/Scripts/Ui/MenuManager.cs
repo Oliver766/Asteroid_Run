@@ -60,6 +60,11 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void OnApplicationQuit()
+    {
+        Application.Quit();
+    }
+
     private void OnLevelSelect(int idx)
     {
         Debug.Log("We Press the level button " + idx);

@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Image healthBarFill;
     public float healthBarChangeTime = 0.5f;
 
+   
     public void ChangeHealthBar(int maxHealth, int currentHealth)
     {
         if (currentHealth < 0)
@@ -69,5 +70,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MenuScene");
 
   }
+
+    
 
 }

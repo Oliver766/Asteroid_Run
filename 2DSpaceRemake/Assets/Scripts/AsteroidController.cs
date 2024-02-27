@@ -8,15 +8,30 @@ public class AsteroidController : MonoBehaviour
     private Rigidbody rb;
     private Vector3 randomRotation;
     private float removePositionZ;
-    // Start is called before the first frame update
+
+    public Material targetMaterial;
+
+    public Renderer[] Renderers;
+   
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         randomRotation = new Vector3(Random.Range(0f, 100f), Random.Range(0f, 100f), Random.Range(0f, 100f));
         removePositionZ = Camera.main.transform.position.z;
+        Renderers = GetComponentsInChildren<Renderer>();
     }
 
-    // Update is called once per frame
+    public void ResetMaterial()
+    {
+
+    }
+
+    public void SetTargetMaterial()
+    {
+
+    }
+
+  
     void Update()
     {
         if(transform.position.z < removePositionZ)
