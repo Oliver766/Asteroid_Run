@@ -29,6 +29,8 @@ public class entitiesController : MonoBehaviour
     [HideInInspector]
     public float minX, maxX, minY, maxY;
 
+    public List<GameObject> currentAsteroid = new List<GameObject>();
+
     public void Start()
     {
         Timer = spawnTime;
@@ -52,7 +54,23 @@ public class entitiesController : MonoBehaviour
 
         Vector3 spawPos = new Vector3(newX, newY, asteroidSpawnDistance);
 
-        Instantiate(asteroidPrefabs[Random.Range(0, asteroidPrefabs.Length)], spawPos, Quaternion.identity);
+       GameObject go =  Instantiate(asteroidPrefabs[Random.Range(0, asteroidPrefabs.Length)], spawPos, Quaternion.identity);
+        currentAsteroid.Add(go);
+    }
+
+    public void UpdateAsteroids(List<GameObject> targetedAsteroids)
+    {
+        foreach(GameObject asteroid in currentAsteroid)
+        {
+            if (targetedAsteroids.Contains(asteroid))
+            {
+                asteroid.GetComponent<AsteroidController>().SetTargetMaterial();
+            }
+            else
+            {
+                asteroid.GetComponent<AsteroidController>().ResetMaterial();
+            }
+        }
     }
 
 }

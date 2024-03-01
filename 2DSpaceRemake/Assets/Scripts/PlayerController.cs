@@ -16,11 +16,24 @@ public class PlayerController : MonoBehaviour
     public GameManager manager;
 
     public GameObject deathMenu;
+
+    public Transform[] misslespawnPoints;
+    public GameObject rocketprefab;
+
+    public float fireInterval = 2f;
+    private bool canFire = true;
+
+    private Vector3 raycastDirection = new Vector3(0f, 0f, 1f);
+    public float raycastDst = 100f;
+    int layerMask;
+    private List<GameObject> previoustargets = new List<GameObject>(); 
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         SetUpBoundries();
         currentHealth = maxHealth;
+        layerMask = LayerMask.GetMask("EnemyRaycastLayer");
     }
 
    
@@ -30,6 +43,47 @@ public class PlayerController : MonoBehaviour
         RotatePlayer();
 
         CalculateBoundries();
+
+        RaycastAsteroids();
+    }
+
+    private void RaycastAsteroids()
+    {
+        List<GameObject> currentTarget = new List<GameObject>();
+        foreach(Transform misslespawnpoint in misslespawnPoints)
+        {
+            RaycastHit hit;
+            Ray ray = new Ray(misslespawnpoint.position, raycastDirection);
+            if(Physics.Raycast(ray, out hit, raycastDst,layerMask))
+            {
+                GameObject target = hit.transform.gameObject;
+                currentTarget.Add(target);
+            }
+        }
+        bool listsChanged = false;
+        // check is previous target and current are the same
+        if (currentTarget.Count != previoustargets.Count)
+        {
+            listsChanged = true;
+        }
+        else
+        {
+            for(int i = 0; i< currentTarget.Count; i++)
+            {
+                if(currentTarget[i] != previoustargets[i])
+                {
+                    listsChanged = true;
+                }
+            }
+        }
+
+        if(listsChanged == true)
+        {
+            // update asteroids
+            entitiesController.Instance.UpdateAsteroids(currentTarget);
+            previoustargets = currentTarget;
+        }
+
     }
 
     private void RotatePlayer()
@@ -51,6 +105,30 @@ public class PlayerController : MonoBehaviour
         Vector3 currentRotationVector3 = new Vector3(0f, 0f, newRotatinZ);
         Quaternion newRotation = Quaternion.Euler(currentRotationVector3);
         transform.localRotation = newRotation;
+    }
+
+    public void FireRockets()
+    {
+        if (canFire)
+        {
+
+            // fire rockets
+            foreach(Transform t in misslespawnPoints)
+            {
+                Instantiate(rocketprefab, t.position, Quaternion.identity);
+            }
+
+            canFire = false;
+            StartCoroutine(ReloadDelay());
+        }
+    }
+
+    private IEnumerator ReloadDelay()
+    {
+        //play reload sound
+        yield return new WaitForSeconds(fireInterval);
+
+        canFire = true;
     }
 
     private void CalculateBoundries()

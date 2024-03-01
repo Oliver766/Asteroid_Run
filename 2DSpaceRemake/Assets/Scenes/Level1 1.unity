@@ -1146,13 +1146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3121ef756bd744fb2b47bd80856617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
-    type: 3}
-  rocketSpawnPoint1: {fileID: 697974391}
-  rocketSpawnPoint2: {fileID: 231613810}
-  fireInterval: 2
   healthBarFill: {fileID: 1908910512}
   healthBarChangeTime: 0.5
+  PlayerController: {fileID: 1969517216}
 --- !u!114 &713663500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1410,6 +1406,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroidPrefabs:
   - {fileID: 5106166344589460243, guid: c2e19e63846709144a1f6a252b6b9d5e, type: 3}
+  - {fileID: 7609681625474282484, guid: f61908fbabb67b54381ef4c0288a0f59, type: 3}
+  - {fileID: 7492287152435455893, guid: ecf13b422dd366a41839a7fffddfa29b, type: 3}
   asteroidSpawnDistance: 50
   spawnTime: 2
   Timer: 1
@@ -1417,6 +1415,7 @@ MonoBehaviour:
   maxX: 0
   minY: 0
   maxY: 0
+  currentAsteroid: []
 --- !u!224 &1103905226 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
@@ -1976,7 +1975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14.900024, y: -13.299988}
+  m_AnchoredPosition: {x: -14.899902, y: -13.300049}
   m_SizeDelta: {x: 121.6908, y: 104.1853}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1461684295
@@ -2846,9 +2845,16 @@ MonoBehaviour:
   moveSpeed: 10
   maxRotation: 25
   currentHealth: 0
-  maxHealth: 4
+  maxHealth: 100
   manager: {fileID: 713663499}
-  deathMenu: {fileID: 0}
+  deathMenu: {fileID: 1650603716}
+  misslespawnPoints:
+  - {fileID: 697974391}
+  - {fileID: 231613810}
+  rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
+    type: 3}
+  fireInterval: 2
+  raycastDst: 100
 --- !u!1 &2002987275
 GameObject:
   m_ObjectHideFlags: 0

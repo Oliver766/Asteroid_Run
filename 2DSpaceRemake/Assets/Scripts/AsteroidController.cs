@@ -10,9 +10,9 @@ public class AsteroidController : MonoBehaviour
     private float removePositionZ;
 
     public Material targetMaterial;
-    public Material baseMat;
+    private Material baseMat;
 
-    public Renderer[] Renderers;
+    private Renderer[] Renderers;
    
     void Start()
     {
@@ -20,17 +20,27 @@ public class AsteroidController : MonoBehaviour
         randomRotation = new Vector3(Random.Range(0f, 100f), Random.Range(0f, 100f), Random.Range(0f, 100f));
         removePositionZ = Camera.main.transform.position.z;
         Renderers = GetComponentsInChildren<Renderer>();
+        baseMat = Renderers[0].material;
     }
 
     public void ResetMaterial()
     {
         if (Renderers == null)
             return;
+        foreach(Renderer rend in Renderers)
+        {
+            rend.material = baseMat;
+        }
     }
 
     public void SetTargetMaterial()
     {
-
+        if (Renderers == null)
+            return;
+        foreach (Renderer rend in Renderers)
+        {
+            rend.material = targetMaterial;
+        }
     }
 
   
@@ -38,7 +48,10 @@ public class AsteroidController : MonoBehaviour
     {
         if(transform.position.z < removePositionZ)
         {
+            entitiesController.Instance.currentAsteroid.Remove(gameObject);
+            
             Destroy(gameObject);
+
         }
 
         Vector3 movementVector = new Vector3(0f, 0f, -moveSpeed * Time.deltaTime);
@@ -49,6 +62,7 @@ public class AsteroidController : MonoBehaviour
 
     public void DestroyAsteroid()
     {
+        entitiesController.Instance.currentAsteroid.Remove(gameObject);
         //play particall effect
 
         //disable movement
