@@ -10,6 +10,7 @@ public class AsteroidController : MonoBehaviour
     private float removePositionZ;
 
     public Material targetMaterial;
+    public Material baseMat;
 
     public Renderer[] Renderers;
    
@@ -23,7 +24,8 @@ public class AsteroidController : MonoBehaviour
 
     public void ResetMaterial()
     {
-
+        if (Renderers == null)
+            return;
     }
 
     public void SetTargetMaterial()
