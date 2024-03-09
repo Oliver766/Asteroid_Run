@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
         SetUpBoundries();
         currentHealth = maxHealth;
         layerMask = LayerMask.GetMask("EnemyRaycastLayer");
+        Time.timeScale = 1;
     }
 
    

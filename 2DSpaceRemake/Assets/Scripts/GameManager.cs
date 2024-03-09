@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
         }
 
         spaceship[choice].SetActive(true);
+        Time.timeScale = 1;
     }
 
 

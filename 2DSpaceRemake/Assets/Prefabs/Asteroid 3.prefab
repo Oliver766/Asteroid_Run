@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccbcc316292f8564fb8b8647e5441cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1500
+  moveSpeed: 50
   targetMaterial: {fileID: 2100000, guid: ea48fe21699c6dc4bbb485f91205e6a3, type: 2}
   dmg: 20
 --- !u!135 &3344734651977670767

@@ -20,6 +20,7 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         screenWidth = Screen.width;
+        Time.timeScale = 1;
 
     }
 
