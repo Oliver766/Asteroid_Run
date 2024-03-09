@@ -7,6 +7,11 @@ public class ScriptableObjectshop : ScriptableObject
 {
     public GameObject starship;
     public string Name;
+    [Range(0,50)]
     public int price;
+    [Range(0,100)]
+    public float speed;
     public bool unlocked;
+    public int choice;
+    
 }

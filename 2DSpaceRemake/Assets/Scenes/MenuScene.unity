@@ -624,12 +624,12 @@ GameObject:
   - component: {fileID: 85606972}
   - component: {fileID: 85606973}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: ShopManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &85606972
 Transform:
   m_ObjectHideFlags: 0
@@ -654,21 +654,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 85606970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8e30c979adbe14cbe999eaae683dbe, type: 3}
+  m_Script: {fileID: 11500000, guid: ef33157a18b83bb43b4add6dac5a5a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceshipPrefabs:
-  - {fileID: 1510364872509504, guid: deca4f6e8b7c117418d5c848196cf663, type: 3}
-  - {fileID: 1570034556958308, guid: 6dcaddc0ad8856f43a1490b1d73e821f, type: 3}
-  - {fileID: 1404724577958374, guid: c02aa014ee8af794bb9cd905cffcfcd0, type: 3}
-  - {fileID: 1819210613620524, guid: 38f5d258ce21ee344886df3a69310cc0, type: 3}
-  - {fileID: 1970447681998018, guid: ddcab37be076662439ef52507ccc92c3, type: 3}
-  - {fileID: 1734771206656390, guid: b2fb93d2b2409dc4086b16cbeb9fb76c, type: 3}
-  - {fileID: 1917106948373238, guid: 14b556e597fa2d94db7f23bad8e9b7c8, type: 3}
-  - {fileID: 1405876428854690, guid: ebf6b86d435b4ac44abca76e9b48247c, type: 3}
-  - {fileID: 1741139820255028, guid: 6d7c19149b28e884f970ce45f98d9bed, type: 3}
-  spaceshipTexttures: []
-  currentSpaceship: {fileID: 0}
+  currentObj: {fileID: 0}
+  choice: 0
+  spaceship: []
 --- !u!1 &87495391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,6 +1249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectshop: {fileID: 11400000, guid: 3945891770144c34cb09b45c706ad82a, type: 2}
   namext: {fileID: 0}
+  choice: 0
 --- !u!114 &107068841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3654,6 +3646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectshop: {fileID: 11400000, guid: 3945891770144c34cb09b45c706ad82a, type: 2}
   namext: {fileID: 1502169837}
+  choice: 0
 --- !u!114 &645942257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4019,6 +4012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectshop: {fileID: 11400000, guid: 3945891770144c34cb09b45c706ad82a, type: 2}
   namext: {fileID: 0}
+  choice: 0
 --- !u!114 &682105047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5824,6 +5818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectshop: {fileID: 11400000, guid: 3945891770144c34cb09b45c706ad82a, type: 2}
   namext: {fileID: 0}
+  choice: 0
 --- !u!114 &854042046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8118,6 +8113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectshop: {fileID: 11400000, guid: 3945891770144c34cb09b45c706ad82a, type: 2}
   namext: {fileID: 0}
+  choice: 0
 --- !u!114 &1195149276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8832,6 +8828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectshop: {fileID: 11400000, guid: 3945891770144c34cb09b45c706ad82a, type: 2}
   namext: {fileID: 0}
+  choice: 0
 --- !u!114 &1310840905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9351,6 +9348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectshop: {fileID: 11400000, guid: 3945891770144c34cb09b45c706ad82a, type: 2}
   namext: {fileID: 0}
+  choice: 0
 --- !u!114 &1401815335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10173,7 +10171,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1510481348}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 645942256}
+        m_TargetAssemblyTypeName: ButtonUpdate, Assembly-CSharp
+        m_MethodName: buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1510481348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11750,6 +11760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectshop: {fileID: 11400000, guid: 3945891770144c34cb09b45c706ad82a, type: 2}
   namext: {fileID: 0}
+  choice: 0
 --- !u!114 &1668416660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13449,6 +13460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectshop: {fileID: 11400000, guid: 3945891770144c34cb09b45c706ad82a, type: 2}
   namext: {fileID: 0}
+  choice: 0
 --- !u!114 &2060057545
 MonoBehaviour:
   m_ObjectHideFlags: 0

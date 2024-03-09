@@ -9,10 +9,19 @@ public class ButtonUpdate : MonoBehaviour
 
     public TextMeshProUGUI namext;
 
+    public int choice;
 
     public void Update()
     {
         namext.text = objectshop.Name;
+        
+    }
+
+    public void buy()
+    {
+        choice = objectshop.choice;
+        PlayerPrefs.SetInt("choice", choice);
+        Debug.Log(choice);
     }
 
 

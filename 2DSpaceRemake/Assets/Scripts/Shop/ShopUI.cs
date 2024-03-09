@@ -10,5 +10,18 @@ public class ShopUI : MonoBehaviour
     public int choice;
     public GameObject[] spaceship;
 
+    public void Start()
+    {
+        choice = PlayerPrefs.GetInt("choice");
+    }
+
+    public void Update()
+    {
+        if(choice == 1)
+        {
+            Debug.Log("Ship 1");
+        }
+    }
+
 
 }
