@@ -13,6 +13,8 @@ public class AsteroidController : MonoBehaviour
     private Material baseMat;
 
     private Renderer[] Renderers;
+
+    public int dmg;
    
     void Start()
     {

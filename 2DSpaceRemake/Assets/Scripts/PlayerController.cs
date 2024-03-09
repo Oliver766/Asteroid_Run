@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private float minX, maxX, minY, maxY;
 
     public int currentHealth;
-    public int maxHealth = 4;
+    public int maxHealth = 100;
     public GameManager manager;
 
     public GameObject deathMenu;

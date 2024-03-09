@@ -2845,7 +2845,7 @@ MonoBehaviour:
   moveSpeed: 10
   maxRotation: 25
   currentHealth: 0
-  maxHealth: 100
+  maxHealth: 50
   manager: {fileID: 713663499}
   deathMenu: {fileID: 1650603716}
   misslespawnPoints:
