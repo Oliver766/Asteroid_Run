@@ -11,6 +11,11 @@ public class ButtonUpdate : MonoBehaviour
 
     public int choice;
 
+    private void Start()
+    {
+        objectshop.unlocked = false;
+    }
+
     public void Update()
     {
         namext.text = objectshop.Name;
@@ -22,6 +27,7 @@ public class ButtonUpdate : MonoBehaviour
         choice = objectshop.choice;
         PlayerPrefs.SetInt("choice", choice);
         Debug.Log(choice);
+        objectshop.unlocked = true;
     }
 
 

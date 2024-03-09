@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b0fa820b08a804fa6b84b22c3583df, type: 3}
   m_Name: Spaceship 4
   m_EditorClassIdentifier: 
-  starship: {fileID: 1510364872509504, guid: f805c7b2f982faf43833878e4f22ae2a, type: 3}
+  starship: {fileID: 1322182638669642, guid: ec6c320a41b48f448b4f67e0c941f00d, type: 3}
   Name: Star Sparrow
   price: 10
+  speed: 0
   unlocked: 0
+  choice: 4

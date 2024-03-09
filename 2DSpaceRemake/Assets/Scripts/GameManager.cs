@@ -9,9 +9,11 @@ public class GameManager : MonoBehaviour
 
     public Image healthBarFill;
     public float healthBarChangeTime = 0.5f;
-    public PlayerController PlayerController;
+    public PlayerController[] PlayerController;
 
-   
+    public int choice;
+    public GameObject[] spaceship;
+
     public void ChangeHealthBar(int maxHealth, int currentHealth)
     {
         if (currentHealth < 0)
@@ -36,7 +38,13 @@ public class GameManager : MonoBehaviour
 
     public void OnFireButtonClicked()
     {
-        PlayerController.FireRockets();
+        foreach(PlayerController go in PlayerController)
+        {
+            go.gameObject.SetActive(false);
+
+        }
+        PlayerController[choice].gameObject.SetActive(true);
+        PlayerController[choice].FireRockets();
     }
 
   
@@ -48,6 +56,16 @@ public class GameManager : MonoBehaviour
 
   }
 
-    
+    public void Start()
+    {
+        choice = PlayerPrefs.GetInt("choice");
+        foreach (GameObject go in spaceship)
+        {
+            go.SetActive(false);
+        }
+
+        spaceship[choice].SetActive(true);
+    }
+
 
 }

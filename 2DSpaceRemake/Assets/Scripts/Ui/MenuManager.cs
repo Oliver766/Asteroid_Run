@@ -12,7 +12,7 @@ public class MenuManager : MonoBehaviour
 
     public Transform shopButtonParent;
 
-    public GameObject mainmenu, shopmenu, map1;
+    public GameObject mainmenu, shopmenu, map1, spaceships;
 
     public MenuType menutype;
 
@@ -31,16 +31,22 @@ public class MenuManager : MonoBehaviour
                 mainmenu.SetActive(true);
                 map1.SetActive(false);
                 shopmenu.SetActive(false);
+                spaceships.SetActive(true);
+
                 break;
             case MenuType.Map1Menu:
                 map1.SetActive(true);
                 shopmenu.SetActive(false);
                 mainmenu.SetActive(false);
+                spaceships.SetActive(false);
+   
                 break;
             case MenuType.ShopMenu:
                 shopmenu.SetActive(true);
                 map1.SetActive(false);
                 mainmenu.SetActive(false);
+                spaceships.SetActive(true);
+
                 break;
         }
 
@@ -55,10 +61,10 @@ public class MenuManager : MonoBehaviour
 
   
 
-    private void OnLevelSelect(int idx)
+    public void OnLevelSelect(int idx)
     {
         Debug.Log("We Press the level button " + idx);
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(idx);
     }
 
     public void OnPlayButtonClicked()

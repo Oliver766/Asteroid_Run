@@ -17,4 +17,4 @@ MonoBehaviour:
   price: 15
   speed: 58.4
   unlocked: 1
-  choice: 1
+  choice: 0
