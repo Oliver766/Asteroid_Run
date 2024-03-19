@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     public int currentHealth;
     public int maxHealth = 100;
-    public GameManager manager;
+    public InGameManager manager;
 
     public GameObject deathMenu;
 
@@ -181,7 +181,7 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth--;
         // change health bar
-        manager.ChangeHealthBar(maxHealth, currentHealth);
+        manager.ChangeHealthbar(maxHealth, currentHealth);
         if(currentHealth == 0)
         {
             OnPlayerDeath();

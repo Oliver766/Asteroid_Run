@@ -1,72 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
-    public Image healthBarFill;
-    public float healthBarChangeTime = 0.5f;
-    public PlayerController[] PlayerController;
-
     public int choice;
     public GameObject[] spaceship;
 
-    public void ChangeHealthBar(int maxHealth, int currentHealth)
-    {
-        if (currentHealth < 0)
-            return;
+    public static GameManager instance;
 
-        float healthPct = currentHealth / (float)maxHealth;
-        StartCoroutine(SmoothhealthBarChange(healthPct));
-    }
+    public GameObject splashMENU;
 
-    private IEnumerator SmoothhealthBarChange(float newFillAmt)
+    public int num;
+
+    private void Awake()
     {
-        float elapsed = 0f;
-        float oldFillamt = healthBarFill.fillAmount;
-        while(elapsed <= healthBarChangeTime)
+        if(instance == null)
         {
-            elapsed += Time.deltaTime;
-            float currentFillAmt = Mathf.Lerp(newFillAmt, oldFillamt, elapsed / healthBarChangeTime);
-            healthBarFill.fillAmount = currentFillAmt;
-            yield return null;
+            instance = this;
         }
-    }
 
-    public void OnFireButtonClicked()
-    {
-        foreach(PlayerController go in PlayerController)
-        {
-            go.gameObject.SetActive(false);
 
-        }
-        PlayerController[choice].gameObject.SetActive(true);
-        PlayerController[choice].FireRockets();
-    }
-
-  
-
-  public void onexitButton()
-  {
-
-        SceneManager.LoadScene("MenuScene");
-
-  }
-
-    public void Start()
-    {
         choice = PlayerPrefs.GetInt("choice");
         foreach (GameObject go in spaceship)
         {
             go.SetActive(false);
         }
-
         spaceship[choice].SetActive(true);
-        Time.timeScale = 1;
+
+
+        DontDestroyOnLoad(gameObject);
+
+        num = PlayerPrefs.GetInt("num");
+
+        if( num == 1)
+        {
+            splashMENU.SetActive(false);
+        }
+
     }
 
+    public void OnApplicationQuit()
+    {
+        Application.Quit();
+        PlayerPrefs.SetInt("num", 0);
+    }
 
 }

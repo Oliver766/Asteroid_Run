@@ -480,7 +480,7 @@ MonoBehaviour:
   maxRotation: 25
   currentHealth: 0
   maxHealth: 50
-  manager: {fileID: 713663499}
+  manager: {fileID: 0}
   deathMenu: {fileID: 1650603716}
   misslespawnPoints:
   - {fileID: 1151310502}
@@ -770,8 +770,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 713663499}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 713663501}
+        m_TargetAssemblyTypeName: InGameManager, Assembly-CSharp
         m_MethodName: OnFireButtonClicked
         m_Mode: 1
         m_Arguments:
@@ -1251,7 +1251,7 @@ MonoBehaviour:
   maxRotation: 25
   currentHealth: 0
   maxHealth: 50
-  manager: {fileID: 713663499}
+  manager: {fileID: 0}
   deathMenu: {fileID: 1650603716}
   misslespawnPoints:
   - {fileID: 2130450274}
@@ -1463,8 +1463,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 713663498}
-  - component: {fileID: 713663499}
   - component: {fileID: 713663500}
+  - component: {fileID: 713663501}
   m_Layer: 0
   m_Name: InGameManager
   m_TagString: Untagged
@@ -1487,41 +1487,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &713663499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713663496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f3121ef756bd744fb2b47bd80856617, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBarFill: {fileID: 1908910512}
-  healthBarChangeTime: 0.5
-  PlayerController:
-  - {fileID: 1969517216}
-  - {fileID: 1246544677}
-  - {fileID: 1986427449}
-  - {fileID: 2026423176}
-  - {fileID: 1537393549}
-  - {fileID: 1465739644}
-  - {fileID: 555087551}
-  - {fileID: 1193056940}
-  - {fileID: 121628533}
-  choice: 0
-  spaceship:
-  - {fileID: 1969517209}
-  - {fileID: 1246544675}
-  - {fileID: 1986427447}
-  - {fileID: 2026423174}
-  - {fileID: 1537393547}
-  - {fileID: 1465739642}
-  - {fileID: 555087549}
-  - {fileID: 1193056938}
-  - {fileID: 121628532}
 --- !u!114 &713663500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1537,6 +1502,21 @@ MonoBehaviour:
   GameIsPaused: 0
   pauseMenuUI: {fileID: 2002987275}
   num: 0
+--- !u!114 &713663501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713663496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04cd999954c636947bfe7f9b9e8e0214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarFill: {fileID: 1908910512}
+  healthBarChangeTime: 0.5
+  playerManager: {fileID: 970311933}
 --- !u!1 &748722250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,6 +1871,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 970311932}
+  - component: {fileID: 970311933}
   m_Layer: 0
   m_Name: SpaceshipHolder
   m_TagString: Untagged
@@ -1922,6 +1903,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &970311933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970311931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c806fccaa97b5c54d9518afaeb78bd70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1103905226 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
@@ -2148,7 +2141,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1135509136}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 713663501}
+        m_TargetAssemblyTypeName: InGameManager, Assembly-CSharp
+        m_MethodName: OnRestartBtnClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1135509136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2445,7 +2450,7 @@ MonoBehaviour:
   maxRotation: 25
   currentHealth: 0
   maxHealth: 50
-  manager: {fileID: 713663499}
+  manager: {fileID: 0}
   deathMenu: {fileID: 1650603716}
   misslespawnPoints:
   - {fileID: 1111578793}
@@ -2577,7 +2582,7 @@ MonoBehaviour:
   maxRotation: 25
   currentHealth: 0
   maxHealth: 50
-  manager: {fileID: 713663499}
+  manager: {fileID: 0}
   deathMenu: {fileID: 1650603716}
   misslespawnPoints:
   - {fileID: 1505239144}
@@ -3056,7 +3061,7 @@ MonoBehaviour:
   maxRotation: 25
   currentHealth: 0
   maxHealth: 50
-  manager: {fileID: 713663499}
+  manager: {fileID: 0}
   deathMenu: {fileID: 1650603716}
   misslespawnPoints:
   - {fileID: 916564293}
@@ -3215,7 +3220,7 @@ MonoBehaviour:
   maxRotation: 25
   currentHealth: 0
   maxHealth: 50
-  manager: {fileID: 713663499}
+  manager: {fileID: 0}
   deathMenu: {fileID: 1650603716}
   misslespawnPoints:
   - {fileID: 435854323}
@@ -4120,7 +4125,7 @@ MonoBehaviour:
   maxRotation: 25
   currentHealth: 0
   maxHealth: 50
-  manager: {fileID: 713663499}
+  manager: {fileID: 0}
   deathMenu: {fileID: 1650603716}
   misslespawnPoints:
   - {fileID: 697974391}
@@ -4219,7 +4224,7 @@ MonoBehaviour:
   maxRotation: 25
   currentHealth: 0
   maxHealth: 50
-  manager: {fileID: 713663499}
+  manager: {fileID: 0}
   deathMenu: {fileID: 1650603716}
   misslespawnPoints:
   - {fileID: 1632150312}
@@ -4426,7 +4431,7 @@ MonoBehaviour:
   maxRotation: 25
   currentHealth: 0
   maxHealth: 50
-  manager: {fileID: 713663499}
+  manager: {fileID: 0}
   deathMenu: {fileID: 1650603716}
   misslespawnPoints:
   - {fileID: 889271698}
