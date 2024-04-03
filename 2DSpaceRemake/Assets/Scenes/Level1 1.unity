@@ -1855,6 +1855,9 @@ MonoBehaviour:
   - {fileID: 7609681625474282484, guid: f61908fbabb67b54381ef4c0288a0f59, type: 3}
   - {fileID: 7492287152435455893, guid: ecf13b422dd366a41839a7fffddfa29b, type: 3}
   asteroidSpawnDistance: 50
+  goldenAsteroidSpawnChange: 0.2
+  goldenAsteroid: {fileID: 5106166344589460243, guid: c2887b7248d08ef4c8a1740a0cf23069,
+    type: 3}
   spawnTime: 2
   Timer: 1
   minX: 0

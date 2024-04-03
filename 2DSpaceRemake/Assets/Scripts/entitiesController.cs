@@ -23,6 +23,8 @@ public class entitiesController : MonoBehaviour
     public GameObject[] asteroidPrefabs;
     public float asteroidSpawnDistance = 50f;
 
+    public float goldenAsteroidSpawnChange = 0.2f;
+    public GameObject goldenAsteroid;
     public float spawnTime = 2f;
     public float Timer = 0f;
 
@@ -54,8 +56,25 @@ public class entitiesController : MonoBehaviour
 
         Vector3 spawPos = new Vector3(newX, newY, asteroidSpawnDistance);
 
-       GameObject go =  Instantiate(asteroidPrefabs[Random.Range(0, asteroidPrefabs.Length)], spawPos, Quaternion.identity);
-        currentAsteroid.Add(go);
+        float randomNr = Random.Range(0f, 1f);
+
+        GameObject GO = null;
+        if(randomNr < goldenAsteroidSpawnChange)
+        {
+            // spawn golden asteroid
+            GO = Instantiate(goldenAsteroid, spawPos, Quaternion.identity);
+
+        }
+        else
+        {
+            // spawn normal asteroid
+            GO = Instantiate(asteroidPrefabs[Random.Range(0, asteroidPrefabs.Length)], spawPos, Quaternion.identity);
+        }
+
+        
+
+       
+        currentAsteroid.Add(GO);
     }
 
     public void UpdateAsteroids(List<GameObject> targetedAsteroids)
