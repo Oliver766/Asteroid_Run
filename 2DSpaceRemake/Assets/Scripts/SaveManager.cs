@@ -53,4 +53,18 @@ public class SaveManager : MonoBehaviour
         StreamReader reader = new StreamReader(XmlSerialized);
         return xml.Deserialize(reader) as SaveClass;
     }
+
+
+    public void AddGold()
+    {
+        saveInfo.gold++;
+        Save();
+    }
+
+      public int GetGold()
+    {
+        return saveInfo.gold;
+    }
+
+
 }

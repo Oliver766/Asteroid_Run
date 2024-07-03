@@ -15,6 +15,11 @@ public class AsteroidController : MonoBehaviour
     private Renderer[] Renderers;
 
     public int dmg;
+
+
+    public bool isGoldenAsteroid = false;
+
+
    
     void Start()
     {
@@ -64,6 +69,15 @@ public class AsteroidController : MonoBehaviour
 
     public void DestroyAsteroid()
     {
+
+        if(isGoldenAsteroid)
+        {
+            // add gold
+
+            SaveManager.Instance.AddGold();
+
+        }
+
         entitiesController.Instance.currentAsteroid.Remove(gameObject);
         //play particall effect
 

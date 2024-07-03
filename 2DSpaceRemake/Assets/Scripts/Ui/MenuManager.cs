@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 public class MenuManager : MonoBehaviour
 {
     public Transform levelContainer;
@@ -16,11 +17,19 @@ public class MenuManager : MonoBehaviour
 
     public MenuType menutype;
 
+    public TextMeshProUGUI CoinTxt;
+
+    private void UpdateGoldText()
+    {
+        CoinTxt.text = SaveManager.Instance.GetGold().ToString();
+    }
+
 
     private void Start()
     {
         screenWidth = Screen.width;
         Time.timeScale = 1;
+        UpdateGoldText();
 
     }
 

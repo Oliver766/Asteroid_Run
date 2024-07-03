@@ -46,4 +46,12 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("num", 0);
     }
 
+
+    void Update()
+    {
+         num = PlayerPrefs.GetInt("num");
+            choice = PlayerPrefs.GetInt("choice");
+
+    }
+
 }
