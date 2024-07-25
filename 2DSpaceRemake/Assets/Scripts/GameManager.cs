@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
         }
 
 
+
         choice = PlayerPrefs.GetInt("choice");
         foreach (GameObject go in spaceship)
         {
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
         spaceship[choice].SetActive(true);
 
 
-        DontDestroyOnLoad(gameObject);
+   
 
         num = PlayerPrefs.GetInt("num");
 
@@ -44,13 +45,22 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
         PlayerPrefs.SetInt("num", 0);
+        SaveManager.Instance.Save();
+         PlayerPrefs.SetInt("choice", choice);
     }
 
 
-    void Update()
+   public void Update()
     {
-         num = PlayerPrefs.GetInt("num");
+            num = PlayerPrefs.GetInt("num");
             choice = PlayerPrefs.GetInt("choice");
+            //PlayerPrefs.SetInt("choice", choice);
+            Debug.Log(choice);
+             foreach (GameObject go in spaceship)
+            {
+            go.SetActive(false);
+             }
+        spaceship[choice].SetActive(true);
 
     }
 

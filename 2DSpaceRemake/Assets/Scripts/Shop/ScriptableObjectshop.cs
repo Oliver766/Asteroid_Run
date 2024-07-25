@@ -13,5 +13,7 @@ public class ScriptableObjectshop : ScriptableObject
     public float speed;
     public bool unlocked;
     public int choice;
+
+ 
     
 }

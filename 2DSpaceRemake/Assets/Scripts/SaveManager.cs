@@ -66,5 +66,12 @@ public class SaveManager : MonoBehaviour
         return saveInfo.gold;
     }
 
+    public void removeGold(int gold)
+    {
+        saveInfo.gold -= gold;
+        Save();
+
+    }
+
 
 }
