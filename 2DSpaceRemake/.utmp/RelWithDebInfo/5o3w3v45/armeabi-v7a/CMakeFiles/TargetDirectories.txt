@@ -1,0 +1,5 @@
+D:/Github/2DSpaceRemake/2DSpaceRemake/.utmp/RelWithDebInfo/5o3w3v45/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/Github/2DSpaceRemake/2DSpaceRemake/.utmp/RelWithDebInfo/5o3w3v45/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+D:/Github/2DSpaceRemake/2DSpaceRemake/.utmp/RelWithDebInfo/5o3w3v45/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+D:/Github/2DSpaceRemake/2DSpaceRemake/.utmp/RelWithDebInfo/5o3w3v45/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+D:/Github/2DSpaceRemake/2DSpaceRemake/.utmp/RelWithDebInfo/5o3w3v45/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir

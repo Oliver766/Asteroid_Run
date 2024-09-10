@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using System.IO;
 using System.Xml.Serialization;
 
@@ -53,6 +52,9 @@ public class SaveManager : MonoBehaviour
         StreamReader reader = new StreamReader(XmlSerialized);
         return xml.Deserialize(reader) as SaveClass;
     }
+
+  
+
 
 
     public void AddGold()

@@ -511,6 +511,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 11400000, guid: e239c735bc0fea14faba810e14a34df6, type: 2}
   raycastDst: 100
 --- !u!65 &121628534
 BoxCollider:
@@ -1062,7 +1063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 189, y: -50}
+  m_AnchoredPosition: {x: 228, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &494233074
@@ -1324,6 +1325,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 11400000, guid: 24d1d9cb52a95674f99d54acd5f629df, type: 2}
   raycastDst: 100
 --- !u!65 &555087552
 BoxCollider:
@@ -1998,6 +2000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c806fccaa97b5c54d9518afaeb78bd70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  choice: 0
 --- !u!224 &1103905226 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
@@ -2564,6 +2567,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 11400000, guid: 6d54d002191f0b443ac842a3df73521e, type: 2}
   raycastDst: 100
 --- !u!65 &1193056941
 BoxCollider:
@@ -2739,6 +2743,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 11400000, guid: d80e7710aae449c43a90702be3dadd64, type: 2}
   raycastDst: 100
 --- !u!65 &1246544678
 BoxCollider:
@@ -3283,6 +3288,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 11400000, guid: 92e65fd1edcb227489ede7b47ca62a2d, type: 2}
   raycastDst: 100
 --- !u!65 &1465739645
 BoxCollider:
@@ -3485,6 +3491,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 11400000, guid: ed787fdd8c8efbc40867e1e28db634ed, type: 2}
   raycastDst: 100
 --- !u!65 &1537393550
 BoxCollider:
@@ -4438,6 +4445,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 11400000, guid: 3945891770144c34cb09b45c706ad82a, type: 2}
   raycastDst: 100
 --- !u!1001 &1986427446
 PrefabInstance:
@@ -4561,6 +4569,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 11400000, guid: eaf9ac7f4b5005347aa3026a6b3f3e16, type: 2}
   raycastDst: 100
 --- !u!65 &1986427450
 BoxCollider:
@@ -4810,6 +4819,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 11400000, guid: cae6dcffbbe22f74694900045cd13ac4, type: 2}
   raycastDst: 100
 --- !u!65 &2026423177
 BoxCollider:

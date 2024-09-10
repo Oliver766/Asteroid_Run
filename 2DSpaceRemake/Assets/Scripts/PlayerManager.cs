@@ -6,6 +6,8 @@ public class PlayerManager : MonoBehaviour
 {
     private PlayerController activePlayerController;
 
+    public int choice;
+
     private void Awake()
     {
         if (GameManager.instance == null)
@@ -19,6 +21,8 @@ public class PlayerManager : MonoBehaviour
             //IN A REAL GAME
             SetCurrentSpaceship();
         }
+        choice = PlayerPrefs.GetInt("choice");
+
 
 
     }

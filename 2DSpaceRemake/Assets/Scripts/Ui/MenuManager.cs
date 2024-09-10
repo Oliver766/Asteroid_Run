@@ -19,6 +19,12 @@ public class MenuManager : MonoBehaviour
 
     public TextMeshProUGUI CoinTxt;
 
+     public GameObject splashMENU;
+
+    public int num;
+
+
+
     private void UpdateGoldText()
     {
         CoinTxt.text = SaveManager.Instance.GetGold().ToString();
@@ -30,6 +36,13 @@ public class MenuManager : MonoBehaviour
         screenWidth = Screen.width;
         Time.timeScale = 1;
         UpdateGoldText();
+          num = PlayerPrefs.GetInt("num");
+
+          if( num == 1)
+        {
+            splashMENU.SetActive(false);
+        }
+
 
     }
 
@@ -60,16 +73,19 @@ public class MenuManager : MonoBehaviour
                 break;
         }
 
-       
+       UpdateGoldText();
     }
   
 
     public void OnApplicationQuit()
     {
         Application.Quit();
+           PlayerPrefs.SetInt("num", 0);
+        SaveManager.Instance.Save();
+     
     }
 
-  
+   
 
     public void OnLevelSelect(int idx)
     {
@@ -99,6 +115,9 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Next map clicked");
     }
+
+
+   
 
     public enum MenuType
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-[CreateAssetMenu(menuName = "Shop", fileName = "Spaceship")]
+[CreateAssetMenu(menuName = "scriptableObject/Shop", fileName = "Spaceship")]
 public class ScriptableObjectshop : ScriptableObject
 {
     public GameObject starship;

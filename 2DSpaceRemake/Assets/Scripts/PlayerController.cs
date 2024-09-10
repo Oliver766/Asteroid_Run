@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Joystick input;
-    public float moveSpeed = 10f;
+    public float moveSpeed;
     public float maxRotation = 25f;
 
     private Rigidbody rb;
@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public float fireInterval = 2f;
     private bool canFire = true;
 
+    public ScriptableObjectshop sco;
+
     private Vector3 raycastDirection = new Vector3(0f, 0f, 1f);
     public float raycastDst = 100f;
     int layerMask;
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth;
         layerMask = LayerMask.GetMask("EnemyRaycastLayer");
         Time.timeScale = 1;
+        moveSpeed = sco.speed;
     }
 
    
@@ -175,6 +178,7 @@ public class PlayerController : MonoBehaviour
         Vector3 movementVector = new Vector3(horizontalMovement, verticalMovement, 0f);
 
         rb.velocity = movementVector * moveSpeed;
+        
     }
 
     public void OnAsteroidImpact()

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: ed18c1b4e261aec4ca9728fa179aec3e, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9cbf8f73beb347c4cad41891693e07ab, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -511,6 +511,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 0}
   raycastDst: 100
 --- !u!65 &121628534
 BoxCollider:
@@ -1062,7 +1063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 189, y: -50}
+  m_AnchoredPosition: {x: 228, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &494233074
@@ -1324,6 +1325,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 0}
   raycastDst: 100
 --- !u!65 &555087552
 BoxCollider:
@@ -1998,6 +2000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c806fccaa97b5c54d9518afaeb78bd70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  choice: 0
 --- !u!224 &1103905226 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
@@ -2564,6 +2567,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 0}
   raycastDst: 100
 --- !u!65 &1193056941
 BoxCollider:
@@ -2739,6 +2743,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 0}
   raycastDst: 100
 --- !u!65 &1246544678
 BoxCollider:
@@ -3283,6 +3288,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 0}
   raycastDst: 100
 --- !u!65 &1465739645
 BoxCollider:
@@ -3485,6 +3491,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 0}
   raycastDst: 100
 --- !u!65 &1537393550
 BoxCollider:
@@ -4438,6 +4445,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 0}
   raycastDst: 100
 --- !u!1001 &1986427446
 PrefabInstance:
@@ -4561,6 +4569,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 0}
   raycastDst: 100
 --- !u!65 &1986427450
 BoxCollider:
@@ -4810,6 +4819,7 @@ MonoBehaviour:
   rocketprefab: {fileID: 1897039228598360527, guid: 97d085255e281fe46b88e003b7abd695,
     type: 3}
   fireInterval: 2
+  sco: {fileID: 0}
   raycastDst: 100
 --- !u!65 &2026423177
 BoxCollider:
