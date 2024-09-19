@@ -12,6 +12,7 @@ public class ScriptableObjectshop : ScriptableObject
     [Range(0,100)]
     public float speed;
     public bool unlocked;
+
     public int choice;
 
  

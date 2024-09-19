@@ -27,7 +27,7 @@ public class MenuManager : MonoBehaviour
 
     private void UpdateGoldText()
     {
-        CoinTxt.text = SaveManager.Instance.GetGold().ToString();
+        CoinTxt.text = StatsController.inst_controller.money.ToString();
     }
 
 
@@ -42,6 +42,15 @@ public class MenuManager : MonoBehaviour
         {
             splashMENU.SetActive(false);
         }
+
+        if(!PlayerPrefs.HasKey("Currency")){
+           StatsController.inst_controller.money = 100;
+            PlayerPrefs.SetInt("Currency",StatsController.inst_controller.money);
+        }
+        else{
+            PlayerPrefs.GetInt("Currency");
+        }
+        
 
 
     }
@@ -81,11 +90,11 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
            PlayerPrefs.SetInt("num", 0);
-        SaveManager.Instance.Save();
+     
      
     }
 
-   
+  
 
     public void OnLevelSelect(int idx)
     {

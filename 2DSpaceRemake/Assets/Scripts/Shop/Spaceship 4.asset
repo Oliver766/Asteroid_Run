@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starship: {fileID: 1322182638669642, guid: ec6c320a41b48f448b4f67e0c941f00d, type: 3}
   Name: Star Sparrow
-  price: 10
+  price: 5
   speed: 0
   unlocked: 0
   choice: 4

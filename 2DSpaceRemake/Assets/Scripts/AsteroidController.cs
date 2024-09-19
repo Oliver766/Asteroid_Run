@@ -74,7 +74,7 @@ public class AsteroidController : MonoBehaviour
         {
             // add gold
 
-            SaveManager.Instance.AddGold();
+            
 
         }
 

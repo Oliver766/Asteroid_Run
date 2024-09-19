@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     public void Update(){
 
         choice = PlayerPrefs.GetInt("choice");
-          PlayerPrefs.SetInt("choice", choice);
+        PlayerPrefs.SetInt("choice", choice);
 
     }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Data;
 
 public class ButtonUpdate : MonoBehaviour
 {
@@ -11,28 +12,65 @@ public class ButtonUpdate : MonoBehaviour
     public TextMeshProUGUI namext;
 
     public Button equipped;
+  
+    public Button buybtn;
+
+    public bool unlocked;
+
+
+
 
     public int choice;
 
-    private void Start()
-    {
-        objectshop.unlocked = false;
+
+
+
+    void Start(){
+        unlocked = objectshop.unlocked;
+      
+        namext.text = objectshop.name;
     }
 
-    public void Update()
-    {
-        namext.text = objectshop.Name;
+   void Update(){
+    if(unlocked == false ){
+        buybtn.gameObject.SetActive(true);
+        equipped.gameObject.SetActive(false);
+
+    }
+    if(unlocked == true){
+             buybtn.gameObject.SetActive(false);
+        equipped.gameObject.SetActive(true);
+
+    }
+ 
+    
+
+   }
+
+    public void equippedbtn(){
         
-    }
-
-    public void buy()
-    {
-        choice = objectshop.choice;
+         choice = objectshop.choice;
+         
         PlayerPrefs.SetInt("choice", choice);
         Debug.Log(choice);
-        objectshop.unlocked = true;
-        equipped.gameObject.SetActive(true);
-    }
+   }
+
+  
+
+   public void buyFunc(){
+    objectshop.unlocked = true;
+    unlocked= true;
+
+    int amount = objectshop.price;
+    StatsController.inst_controller.money -= amount;
+        PlayerPrefs.SetInt("Currency",StatsController.inst_controller.money);
+ 
+    
+   }
+
+      
+    
+
 
 
 }

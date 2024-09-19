@@ -21,4 +21,14 @@ public class Rotation : MonoBehaviour
         }
         spaceship[choice].SetActive(true);
     }
+
+    public void choicerfunc(){
+       
+        PlayerPrefs.SetInt("choice", choice);
+        foreach (GameObject go in spaceship)
+        {
+            go.SetActive(false);
+        }
+        spaceship[choice].SetActive(true);
+    }
 }
