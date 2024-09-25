@@ -19,6 +19,10 @@ public class AsteroidController : MonoBehaviour
 
     public bool isGoldenAsteroid = false;
 
+    public M1L1Controller m1L1;
+
+
+
 
    
     void Start()
@@ -28,6 +32,7 @@ public class AsteroidController : MonoBehaviour
         removePositionZ = Camera.main.transform.position.z;
         Renderers = GetComponentsInChildren<Renderer>();
         baseMat = Renderers[0].material;
+        m1L1 = FindFirstObjectByType<M1L1Controller>();
     }
 
     public void ResetMaterial()
@@ -74,7 +79,7 @@ public class AsteroidController : MonoBehaviour
         {
             // add gold
 
-            
+            StatsController.inst_controller.money += 20;
 
         }
 
@@ -87,6 +92,8 @@ public class AsteroidController : MonoBehaviour
 
         //destroy game object with a delay
         Destroy(gameObject);
+        m1L1.astroidsDestroyed -=1;
+       
     }
     private void OnTriggerEnter(Collider other)
     {

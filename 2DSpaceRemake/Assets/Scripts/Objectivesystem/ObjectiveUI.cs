@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ObjectiveUI : MonoBehaviour
 {
@@ -14,11 +15,12 @@ public class ObjectiveUI : MonoBehaviour
 
    public Color btncolor;
 
-   public int levelComplete;
+ 
 
    void Start(){
     completed = lso.LevelCompleted;
     unlocked = lso.LevelUnlocked;
+
 
 
     if(unlocked == false){
@@ -28,12 +30,18 @@ public class ObjectiveUI : MonoBehaviour
 
 
    void Update(){
-  
-  
     if(completed == true){
         button.GetComponent<Image>().color = btncolor;
+        button.interactable = false;
 
     }
+
+
+   }
+
+   public void levelload(){
+
+    SceneManager.LoadScene(lso.levelscene);
 
    }
 }

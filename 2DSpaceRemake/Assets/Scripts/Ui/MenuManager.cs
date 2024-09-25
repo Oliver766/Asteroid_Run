@@ -42,6 +42,9 @@ public class MenuManager : MonoBehaviour
         {
             splashMENU.SetActive(false);
         }
+        else{
+            StartCoroutine(ANIMATION());
+        }
 
         if(!PlayerPrefs.HasKey("Currency")){
            StatsController.inst_controller.money = 100;
@@ -96,11 +99,7 @@ public class MenuManager : MonoBehaviour
 
   
 
-    public void OnLevelSelect(int idx)
-    {
-        Debug.Log("We Press the level button " + idx);
-        SceneManager.LoadScene(idx);
-    }
+   
 
     public void OnPlayButtonClicked()
     {
@@ -125,8 +124,10 @@ public class MenuManager : MonoBehaviour
         Debug.Log("Next map clicked");
     }
 
-
-   
+    public IEnumerator ANIMATION(){
+        yield return new WaitForSeconds(3f);
+        splashMENU.SetActive(false);
+    }   
 
     public enum MenuType
     {

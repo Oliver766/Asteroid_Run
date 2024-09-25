@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScene.unity
     guid: 4777f1bf8c63c3a4c8da71d464723eb8
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/Map1/Level 1.unity
     guid: 34b07b06553b94049aa96cd571d7e959
   - enabled: 1
-    path: Assets/Scenes/Level 2.unity
+    path: Assets/Scenes/Map1/Level 2.unity
     guid: b4b43b5a284c9ab4e9fe187a21b3732b
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: e0c477bf6e7cc4947b77332d80fec814,

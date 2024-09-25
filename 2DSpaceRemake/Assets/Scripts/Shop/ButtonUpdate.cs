@@ -10,6 +10,7 @@ public class ButtonUpdate : MonoBehaviour
     public ScriptableObjectshop objectshop;
 
     public TextMeshProUGUI namext;
+     public TextMeshProUGUI costxt;
 
     public Button equipped;
   
@@ -27,8 +28,6 @@ public class ButtonUpdate : MonoBehaviour
 
     void Start(){
         unlocked = objectshop.unlocked;
-      
-        namext.text = objectshop.name;
     }
 
    void Update(){
@@ -43,7 +42,8 @@ public class ButtonUpdate : MonoBehaviour
 
     }
  
-    
+    costxt.text = objectshop.price.ToString();
+    namext.text = objectshop.name;
 
    }
 

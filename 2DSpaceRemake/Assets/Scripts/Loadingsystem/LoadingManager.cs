@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class LoadingManager : MonoBehaviour
 {
-    public GameObject obj;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +14,5 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void off()
-    {
-        obj.SetActive(false);
     }
 }

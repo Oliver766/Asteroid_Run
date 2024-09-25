@@ -8,5 +8,7 @@ public class levelScriptableObject : ScriptableObject
     public bool LevelCompleted;
 
     public int astroidsDestroyed;
+
+    public int levelscene;
     
 }

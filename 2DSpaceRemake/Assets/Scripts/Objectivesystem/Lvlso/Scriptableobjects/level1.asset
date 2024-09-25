@@ -15,3 +15,4 @@ MonoBehaviour:
   LevelUnlocked: 1
   LevelCompleted: 1
   astroidsDestroyed: 5
+  levelscene: 1
