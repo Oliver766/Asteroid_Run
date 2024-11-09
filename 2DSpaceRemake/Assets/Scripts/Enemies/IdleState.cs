@@ -5,8 +5,19 @@ using UnityEngine;
 
 public class IdleState : State
 {
+    public ChaseState chaseState;
+    public bool canseeThePlay;
+
     public override State RunCurrentState()
     {
-        throw new System.NotImplementedException();
+        if(canseeThePlay)
+        {
+            return chaseState;
+        }
+        else
+        {
+            return this;
+        }
+       
     }
 }

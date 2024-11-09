@@ -6,7 +6,8 @@ public class AttackState : State
 {
     public override State RunCurrentState()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("I have Attacked!");
+       return this;
     }
 
 
