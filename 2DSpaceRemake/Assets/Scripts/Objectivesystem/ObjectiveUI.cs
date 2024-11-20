@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO.IsolatedStorage;
+
 
 public class ObjectiveUI : MonoBehaviour
 {
@@ -41,7 +43,28 @@ public class ObjectiveUI : MonoBehaviour
 
    public void levelload(){
 
-    SceneManager.LoadScene(lso.levelscene);
 
+
+    //SceneManager.LoadScene(lso.levelscene);
+
+   }
+
+   public IEnumerator loadingscene()
+   {
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(lso.levelscene);
+        // don't let scene load yet
+        asyncOperation.allowSceneActivation = false;
+
+        while(!asyncOperation.isDone){
+
+            // put animation here for scene  loading
+            // adding in warp particle effect
+            // loading scene  syncronously
+            // finish with a pat on  the back
+        }
+        yield return new WaitForSeconds(1f);
+
+
+        
    }
 }
