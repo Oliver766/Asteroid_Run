@@ -17,6 +17,8 @@ public class ObjectiveUI : MonoBehaviour
 
    public Color btncolor;
 
+   public bool loadLevel;
+
  
 
    void Start(){
