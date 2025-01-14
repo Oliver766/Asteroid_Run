@@ -1,10 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
- 
-public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
+
+public class InitializeAdsScript : MonoBehaviour, IUnityAdsInitializationListener
 {
-    [SerializeField] string _androidGameId;
+    // Start is called before the first frame update [SerializeField] string _androidGameId;
     [SerializeField] string _iOSGameId;
+    [SerializeField] string _androidGameId;
     [SerializeField] bool _testMode = true;
     private string _gameId;
  
