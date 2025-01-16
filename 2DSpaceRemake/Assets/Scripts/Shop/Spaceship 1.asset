@@ -16,5 +16,5 @@ MonoBehaviour:
   Name: Star Sparrow
   price: 10
   speed: 15
-  unlocked: 0
+  unlocked: 1
   choice: 1
