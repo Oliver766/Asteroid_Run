@@ -1256,6 +1256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
+  score: 0
 --- !u!114 &85606975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22569,7 +22570,7 @@ GameObject:
   - component: {fileID: 2031128388}
   - component: {fileID: 2031128387}
   m_Layer: 0
-  m_Name: Add Manager
+  m_Name: Ad Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

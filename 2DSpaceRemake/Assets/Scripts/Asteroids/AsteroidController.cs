@@ -93,6 +93,7 @@ public class AsteroidController : MonoBehaviour
         //destroy game object with a delay
         Destroy(gameObject);
         m1L1.astroidsDestroyed -=1;
+        StatsController.inst_controller.score ++;
        
     }
     private void OnTriggerEnter(Collider other)

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8fcdbaecaaf7d4eb466b066afae2b1, type: 3}
   m_Name: level1
   m_EditorClassIdentifier: 
-  LevelUnlocked: 0
+  LevelUnlocked: 1
   LevelCompleted: 0
   astroidsDestroyed: 5
   levelscene: 1

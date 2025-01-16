@@ -10,10 +10,28 @@ public class InitializeAdsScript : MonoBehaviour, IUnityAdsInitializationListene
     [SerializeField] string _androidGameId;
     [SerializeField] bool _testMode = true;
     private string _gameId;
+
+    public static InitializeAdsScript instance;
  
     void Awake()
     {
+
+         if(instance == null)
+        {
+
+            instance = this;
+            
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        
         InitializeAds();
+
+        DontDestroyOnLoad(gameObject);
+        
+      
     }
  
     public void InitializeAds()

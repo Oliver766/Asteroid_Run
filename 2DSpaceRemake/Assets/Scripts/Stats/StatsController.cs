@@ -7,7 +7,9 @@ public class StatsController : MonoBehaviour
 
     public int money;
 
-    public  static StatsController inst_controller;
+    public int score;
+
+    public static StatsController inst_controller;
 
     void Awake(){
 
@@ -29,6 +31,8 @@ public class StatsController : MonoBehaviour
         if( money <= 0){
             money += 50;
         }
+
+        Debug.Log(score);
     }
  
 }
