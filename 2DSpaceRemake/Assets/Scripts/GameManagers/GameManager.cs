@@ -6,10 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public int choice;
     public GameObject[] spaceship;
-
     public static GameManager instance;
-
-   
 
     private void Awake()
     {

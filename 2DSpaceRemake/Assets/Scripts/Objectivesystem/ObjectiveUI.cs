@@ -12,18 +12,17 @@ public class ObjectiveUI : MonoBehaviour
 
    public bool completed;
    public bool unlocked;
-
    public Button button;
-
    public Color btncolor;
-
    public bool loadLevel;
-
+   public GameObject warpObject;
+   public Image transitionscreen;
  
 
    void Start(){
     completed = lso.LevelCompleted;
     unlocked = lso.LevelUnlocked;
+    warpObject.SetActive(false);
 
 
 
@@ -48,6 +47,7 @@ public class ObjectiveUI : MonoBehaviour
 
 
     //SceneManager.LoadScene(lso.levelscene);
+    StartCoroutine(loadingscene());
 
    }
 
@@ -60,7 +60,13 @@ public class ObjectiveUI : MonoBehaviour
         while(!asyncOperation.isDone){
 
             // put animation here for scene  loading
-            // adding in warp particle effect
+
+            warpObject.SetActive(true);
+            transitionscreen.gameObject.SetActive(true);
+
+            asyncOperation.allowSceneActivation = true;
+
+           // adding in warp particle effect
             // loading scene  syncronously
             // finish with a pat on  the back
         }

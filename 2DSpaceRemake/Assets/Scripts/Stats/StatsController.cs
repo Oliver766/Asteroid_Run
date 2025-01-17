@@ -32,7 +32,7 @@ public class StatsController : MonoBehaviour
             money += 50;
         }
 
-        Debug.Log(score);
+        
     }
  
 }

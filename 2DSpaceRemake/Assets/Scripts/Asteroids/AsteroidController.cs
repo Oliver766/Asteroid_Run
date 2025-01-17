@@ -8,23 +8,14 @@ public class AsteroidController : MonoBehaviour
     private Rigidbody rb;
     private Vector3 randomRotation;
     private float removePositionZ;
-
     public Material targetMaterial;
     private Material baseMat;
-
     private Renderer[] Renderers;
-
     public int dmg;
-
-
     public bool isGoldenAsteroid = false;
-
     public M1L1Controller m1L1;
 
 
-
-
-   
     void Start()
     {
         rb = GetComponent<Rigidbody>();

@@ -9,7 +9,6 @@ public class Levelscreencontroller : MonoBehaviour
     public levelScriptableObject[] lso;
 
     public int levelcompleted;
-   
 
 
     // Start is called before the first frame update
@@ -18,7 +17,6 @@ public class Levelscreencontroller : MonoBehaviour
         levelcompleted = PlayerPrefs.GetInt("levelcounter");
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(levelcompleted == 1){

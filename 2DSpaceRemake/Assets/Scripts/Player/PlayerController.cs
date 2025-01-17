@@ -1,34 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{
+{   
+    [Header("Ship Movement")]
     public Joystick input;
     public float moveSpeed;
     public float maxRotation = 25f;
 
+    [Header("Rigidbody")]
     private Rigidbody rb;
     private float minX, maxX, minY, maxY;
-
+    [Header("ShipHealth")]
     public int currentHealth;
     public int maxHealth = 100;
     public InGameManager manager;
-
     public GameObject deathMenu;
-
+    [Header("Missles")]
     public Transform[] misslespawnPoints;
     public GameObject rocketprefab;
-
     public float fireInterval = 2f;
     private bool canFire = true;
-
+    [Header("ScriptableObject")]
     public ScriptableObjectshop sco;
 
-    private Vector3 raycastDirection = new Vector3(0f, 0f, 1f);
+   [SerializeField] private Vector3 raycastDirection = new Vector3(0f, 0f, 1f);
+     [Header("Raycast")]
     public float raycastDst = 100f;
     int layerMask;
-    private List<GameObject> previoustargets = new List<GameObject>(); 
+    [SerializeField]private List<GameObject> previoustargets = new List<GameObject>(); 
 
     void Start()
     {
@@ -45,9 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
         RotatePlayer();
-
         CalculateBoundries();
-
         RaycastAsteroids();
     }
 
@@ -155,8 +155,7 @@ public class PlayerController : MonoBehaviour
         Bounds gameObjectBouds = GetComponent<Collider>().bounds;
         float objectWidth = gameObjectBouds.size.x;
         float objectHeight = gameObjectBouds.size.y;
-        
-
+    
 
         minX = bottomCorners.x + objectWidth;
         maxX = topCorners.x - objectWidth;

@@ -92,14 +92,9 @@ public class MenuManager : MonoBehaviour
     public void OnApplicationQuit()
     {
         Application.Quit();
-           PlayerPrefs.SetInt("num", 0);
-     
-     
+        PlayerPrefs.SetInt("num", 0);
     }
 
-  
-
-   
 
     public void OnPlayButtonClicked()
     {
